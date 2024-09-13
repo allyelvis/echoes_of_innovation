@@ -1,12 +1,18 @@
 {
-  "name": "echoes_of_innovation",
+  "name": "echoes-of-innovation",
   "version": "1.0.0",
-  "description": "# Echoes of Innovation: The Quest for Lost Tech",
+  "description": "A text-based adventure game based on the story 'Echoes of Innovation'.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "python3 echoes_of_innovation.py"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "game",
+    "adventure",
+    "text-based",
+    "echoes-of-innovation"
+  ],
+  "author": "Ally Elvis Nzeyimana",
+  "license": "MIT",
+  "dependencies": {}
 }

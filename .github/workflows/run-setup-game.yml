@@ -1,0 +1,40 @@
+name: Run Setup Game Script
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch: # Allows manual triggering of the workflow
+
+jobs:
+  setup-game:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up the environment (optional - customize as needed)
+      - name: Set up Python 3.x
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      # Step 3: Make the setup_game.sh script executable
+      - name: Make setup_game.sh executable
+        run: chmod +x ./setup_game.sh
+
+      # Step 4: Execute the setup_game.sh script
+      - name: Run setup_game.sh
+        run: ./setup_game.sh
+
+      # (Optional) Step 5: Upload any artifacts or logs, if needed
+      - name: Upload setup logs
+        uses: actions/upload-artifact@v3
+        with:
+          name: setup-logs
+          path: ./logs/
